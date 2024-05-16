@@ -6,7 +6,7 @@ import ProtectedRoutes from './Components/Admin/Components/ProtectedRoutes'
 function App() {
   return (
     <>
-      <div className=' w-[100%] min-h-screen m-0 bg1 fixed -z-10'></div>
+      <div className=' w-[100%] lg:min-h-screen h-[200vh] m-0 bg1 fixed -z-10 overflow-hidden'></div>
         <BrowserRouter> 
           <Routes>
             <Route path='/' element={<Home />} />

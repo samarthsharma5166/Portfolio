@@ -8,12 +8,12 @@ const AllSkills = () => {
   const dispatch = useDispatch();
   const skills = useSelector((state)=>state.user.skills);
   const getSkills = async()=>{
-    const res = await axios.get('http://localhost:4000/api/v1/user/getSkills');
+    const res = await axios.get('https://protfolio-api-czji.onrender.com/api/v1/user/getSkills');
     dispatch(setSkills(res.data.skill));
 
   }
   const deleteSkill=async(id)=>{
-    const res = await axios.delete(`http://localhost:4000/api/v1/user/removeSkills/${id}`);
+    const res = await axios.delete(`https://protfolio-api-czji.onrender.com/api/v1/user/removeSkills/${id}`);
     setLoading(true)
     const data = res.data;
     alert(data.message);

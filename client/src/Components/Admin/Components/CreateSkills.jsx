@@ -16,7 +16,7 @@ const CreateSkills = () => {
     setIsLoading(true);
     if (level > 0 && level <= 5) {
       try {
-        const res = await axios.post("http://localhost:4000/api/v1/user/addskills", {
+        const res = await axios.post("https://protfolio-api-czji.onrender.com/api/v1/user/addskills", {
           skill, level
         });
         setIsLoading(false);

@@ -13,7 +13,7 @@ const ProjectSection = () => {
     scrollRef.current.scrollLeft -= 500;
   }
   const getproject = async()=>{
-    const res = await axios.get('http://localhost:4000/api/v1/user/project');
+    const res = await axios.get('https://protfolio-api-czji.onrender.com/api/v1/user/project');
     setProjects(res.data.projects);
   }
   useEffect(()=>{

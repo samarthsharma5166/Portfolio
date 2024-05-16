@@ -13,10 +13,10 @@ const AdminNavbar = () => {
   
   const navigate = useNavigate();
   const handelLogout=async()=>{
-    const res = await axios.get("http://localhost:4000/api/v1/user/logout",{
+    const res = await axios.get("https://protfolio-api-czji.onrender.com/api/v1/user/logout",{
       withCredentials:true
     });
-    dispatch(logout);
+    dispatch(logout());
     navigate('/login')
   }
   return (

@@ -22,26 +22,26 @@ const AllProjects = () => {
     setFormData({...formData,image:file});
   }
   const getproject = async()=>{
-    const res = await axios.get('http://localhost:4000/api/v1/user/project');
+    const res = await axios.get('https://protfolio-api-czji.onrender.com/api/v1/user/project');
     dispatch(setProjects(res.data.projects));
-    console.log(res.data.projects);
+    
   }
 
   const updateProject =async(id)=>{
     setEdit(!edit);
-    const res = await axios.put(`http://localhost:4000/api/v1/user/updateProject/${id}`,formData, {
+    const res = await axios.put(`https://protfolio-api-czji.onrender.com/api/v1/user/updateProject/${id}`,formData, {
       headers: {
         'Content-Type': 'multipart/form-data' // Set appropriate headers for form data
       }
     });
     dispatch(setProjects(res.data.projects));
-    console.log(res);
+  
     getproject();
     alert('project updated');
   }
   const deleteProject = async(id) => {
     try {
-      const res = await axios.delete(`http://localhost:4000/api/v1/user/removeProject/${id}`);
+      const res = await axios.delete(`https://protfolio-api-czji.onrender.com/api/v1/user/removeProject/${id}`);
       dispatch(setProjects(res.data.projects))
       getproject();
       alert('Project deleted');
